@@ -1,6 +1,6 @@
 import sys, random
 
-attempt_number_hash = {1: "1st", 2: "2nd", 3: "3rd", 4: "4th", 5: "5th"}
+ATTEMPT_NUMBER_HASH = {1: "1st", 2: "2nd", 3: "3rd", 4: "4th", 5: "5th"}
 
 
 def input_min_number():
@@ -37,7 +37,7 @@ def guess_number(ans_number: int):
     for i in range(1, 5):
         guess_number = input_guess_number()
         if guess_number == ans_number:
-            print(f"Correct. Your {str(attempt_number_hash[i])} attempt.")
+            print(f"Correct. Your {str(ATTEMPT_NUMBER_HASH[i])} attempt.")
             return
     print("Fail. Exceeded 5th attempt.")
 
