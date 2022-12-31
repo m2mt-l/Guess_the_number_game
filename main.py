@@ -4,7 +4,7 @@ ATTEMPT_NUMBER_HASH = {1: "1st", 2: "2nd", 3: "3rd", 4: "4th", 5: "5th"}
 
 
 def input_min_number():
-    min_number = input("Please input a minimum number between 1 and 100: \n")
+    min_number = input("Please input a minimum number between 1 and 100: ")
     if check_int_or_not(min_number) is False:
         return input_min_number()
     min_number = int(min_number)
@@ -14,7 +14,7 @@ def input_min_number():
 
 
 def input_max_number(min_number: int):
-    max_number = input("Please input a maximum number between 1 and 100: \n")
+    max_number = input("Please input a maximum number between 1 and 100: ")
     if check_int_or_not(max_number) is False:
         return input_max_number(min_number)
     max_number = int(max_number)
@@ -33,7 +33,7 @@ def main():
 
 
 def input_guess_number():
-    guess_number = input("Please input your guess number: \n")
+    guess_number = input("Please input your guess number: ")
     return int(guess_number) if check_int_or_not(guess_number) else input_guess_number()
 
 
