@@ -38,11 +38,13 @@ def input_guess_number():
 
 
 def guess_number(ans_number: int):
-    for i in range(1, 5):
+    for i in range(1, 6):
         guess_number = input_guess_number()
-        if guess_number == ans_number:
+        if check_difference(guess_number, ans_number):
             print(f"Correct. Your {str(ATTEMPT_NUMBER_HASH[i])} attempt.")
             return
+        else:
+            continue
     print("Fail. Exceeded 5th attempt.")
 
 
@@ -68,6 +70,30 @@ def check_valid_max_number(min_num: int, max_num: int):
         return True
     else:
         print("The maximum number must be greater than the minimum number.")
+        return False
+
+
+def check_difference(guess_num: int, ans_num: int):
+    difference = abs(ans_num - guess_num)
+    if difference >= 50:
+        print("The answer is off by over 50.")
+        return False
+    elif 25 <= difference < 50:
+        print("The answer is off by 25 - 49.")
+        return False
+    elif 10 <= difference < 25:
+        print("The answer is off by 10 - 24.")
+        return False
+    elif 5 <= difference < 10:
+        print("The answer is off by 5 - 9.")
+        return False
+    elif 1 <= difference < 5:
+        print("The answer is off by 1 - 4.")
+        return False
+    elif difference == 0:
+        return True
+    else:
+        print("Invalid range")
         return False
 
 
