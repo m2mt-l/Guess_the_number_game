@@ -5,22 +5,22 @@ ATTEMPT_NUMBER_HASH = {1: "1st", 2: "2nd", 3: "3rd", 4: "4th", 5: "5th"}
 
 def input_min_number():
     min_number = input("Please input a minimum number between 1 and 100: ")
-    if check_int_or_not(min_number) is False:
+    if not check_int_or_not(min_number):
         return input_min_number()
     min_number = int(min_number)
-    if check_range_min_and_max_number(min_number) is False:
+    if not check_range_min_and_max_number(min_number):
         return input_min_number()
     return min_number
 
 
 def input_max_number(min_number: int):
     max_number = input("Please input a maximum number between 1 and 100: ")
-    if check_int_or_not(max_number) is False:
+    if not check_int_or_not(max_number):
         return input_max_number(min_number)
     max_number = int(max_number)
-    if check_valid_max_number(min_number, max_number) is False:
+    if not check_valid_max_number(min_number, max_number):
         return input_max_number(min_number)
-    if check_range_min_and_max_number(max_number) is False:
+    if not check_range_min_and_max_number(max_number):
         return input_max_number(min_number)
     return max_number
 
